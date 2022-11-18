@@ -1,5 +1,6 @@
 const {Client, GatewayIntentBits} = require('discord.js');
-const Token = require('./Data.json')
+const {dotenv} = require('dotenv');
+const {token} = require('./config.json')
 const client = new Client({intents: GatewayIntentBits.Guilds});
 
 client.on('ready', () => {
@@ -7,4 +8,4 @@ client.on('ready', () => {
     client.user.setActivity()
 });
 
-client.login(`MTAyOTgxNDAyNTI0MjAzNDE4Ng.GQDQ6D.LodOKzzVb_NQTdgscs4EdwOsjBMhauvJZlqTug`);
+client.login(token);
